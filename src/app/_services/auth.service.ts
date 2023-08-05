@@ -10,6 +10,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,21 +20,21 @@ export class AuthService {
 
   //Login authentication method
 
-  login(username: string, password: string): Observable<any> {
+  login(email: string, password: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signin',{
-        username, password
+        email, password
       },
       httpOptions
     );
   }
 
 // Method for user registration
-  register(name: string, username: string, password: string, roles: string): Observable<any> {
+  register(name: string, email: string, password: string, roles: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signup',
       {
-        name, username, password, roles
+        name, email, password, roles
       },
       httpOptions
     );
