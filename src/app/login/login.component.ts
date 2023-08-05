@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
         this.reloadPage();
       },
       error: err => {
-        this.errorMessage = err.error.message;
+        this.errorMessage = 'Username or password wrongs. '+err.error.message;
         this.isLoginFailed = true;
       }
     });
